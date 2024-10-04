@@ -46,7 +46,7 @@ function addTaskToList(task) {
 }
 
 function addTaskToBackend(task) {
-    fetch("http://localhost:3000/tasks", {
+    fetch("https://todolist-ml3o.onrender.com/tasks", {
         method: "POST", //Sending data to the server
         headers: {
             "Content-Type": "application/json" //Tell the server we are sending JSON
@@ -63,7 +63,7 @@ function addTaskToBackend(task) {
 }
 
 function deleteTaskFromBackend(taskId, taskElement) {
-    fetch(`http://localhost:3000/tasks/${taskId}`, {
+    fetch(`https://todolist-ml3o.onrender.com/tasks/${taskId}`, {
         method: "DELETE"
     }).then(() => {
         taskElement.remove();
@@ -74,7 +74,7 @@ function deleteTaskFromBackend(taskId, taskElement) {
 }
 
 function fetchTasks() { 
-    fetch("http://localhost:3000/tasks") // Send a GET request to the server
+    fetch("https://todolist-ml3o.onrender.com/tasks") // Send a GET request to the server
         .then((response) => response.json()) // Convert the response to JSON
         .then((tasks) => {
             const taskList = document.getElementById("taskList");
